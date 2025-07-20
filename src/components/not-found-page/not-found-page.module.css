@@ -1,0 +1,25 @@
+.notfoundcontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+.errorcode {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.erro-title {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.errormessage {
+  font-size: 18px;
+  color: #777;
+}

@@ -1,0 +1,41 @@
+.controlPanel {
+	display: flex;
+	height: 30px;
+	border-bottom: 2px solid #444;
+	padding: 10px;
+}
+
+.addButton {
+  display: flex;
+  margin-left: auto;
+  align-items: center; /* по вертикали */
+  justify-content: center; /* по горизонтали */
+  width: 32px; 
+  height: 32px; 
+  font-size: 20px; 
+  border: none;
+  background-color: #4CAF50; 
+  color: white;
+  cursor: pointer;
+}
+
+.addButton:hover {
+  background-color: #45a049;
+}
+
+.checkboxLabel {
+  display: inline-flex;
+  align-items: center;
+}
+
+.sortingButton {
+  width: 32px;
+  height: 32px;
+}
+
+.labelContent {
+  margin-left: 3px;
+  margin-right: 3px;
+  font-weight: bold;
+  font-size: 30px;
+}

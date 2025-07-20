@@ -1,0 +1,17 @@
+.todo {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border-bottom: 1px solid #ccc; /* по желанию */
+}
+
+.taskContent {
+  display: flex;
+  justify-content: space-between; /* Распределяет содержимое по краям */
+  align-items: center;
+  width: 100%; /* чтобы занять всё пространство */
+}
+
+.title {
+  margin-left: 8px; /* отступ между чекбокс и текстом */
+}

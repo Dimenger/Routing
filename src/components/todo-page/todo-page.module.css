@@ -1,0 +1,27 @@
+.checkbox {
+  width: 15px;
+  height: 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center
+}
+
+.todoeditwindow {
+  width: 500px;   
+  height: 300px;  
+  padding: 1cqh;  
+  border: 1cm solid #ccc; 
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.textarea{
+  width: 450px;
+  height: 160px;
+  font-size: 16px;
+  font-style: normal;
+
+}
+.button {
+  margin: 2px;
+
+}
