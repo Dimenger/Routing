@@ -1,3 +1,6 @@
+import { AddButton } from "./add/add";
+import { SearchButton } from "./search/search";
+import { SortButton } from "./sort/sort";
 import styles from "./control-panel.module.css";
 
 export const ControlPanel = ({
@@ -7,41 +10,22 @@ export const ControlPanel = ({
   searchTerm,
   handleSearchChange,
 }) => {
-  const onChange = ({ target }) => {
-    // Вызовем функцию toggle для изменения состояния сортировки
-    onSortingToggle(target.checked);
-  };
-
   return (
     <div className={styles.controlPanel}>
       {/* Поле поиска */}
-      <input
-        className={styles.search}
-        type="text"
-        placeholder="Поиск..."
-        value={searchTerm}
-        onChange={handleSearchChange}
+      <SearchButton
+        searchTerm={searchTerm}
+        handleSearchChange={handleSearchChange}
       />
 
       {/* Кнопка сортировки */}
-      <label className={styles.checkboxLabel}>
-        <input
-          className={styles.sortingButton}
-          type="checkbox"
-          checked={isSortingEnabled}
-          onChange={onChange}
-        />
-        <span className={styles.labelContent}>A▼</span>
-      </label>
+      <SortButton
+        isSortingEnabled={isSortingEnabled}
+        onSortingToggle={onSortingToggle}
+      />
 
       {/* Кнопка добавления */}
-      <button
-        className={`${styles.addButton} ${styles.customButton}`}
-        onClick={onTodoAdd}
-        type="button"
-      >
-        ✚
-      </button>
+      <AddButton onTodoAdd={onTodoAdd} />
     </div>
   );
 };

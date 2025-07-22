@@ -1,0 +1,16 @@
+.sortingButton {
+  width: 32px;
+  height: 32px;
+}
+
+.labelContent {
+  margin-left: 3px;
+  margin-right: 3px;
+  font-weight: bold;
+  font-size: 30px; /* увеличенный размер */
+}
+
+.checkboxLabel {
+  display: inline-flex;
+  align-items: center;
+}

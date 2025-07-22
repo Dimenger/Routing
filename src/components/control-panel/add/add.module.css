@@ -1,0 +1,18 @@
+.addButton {
+  display: flex;
+  margin-left: auto;
+  align-items: center; /* по вертикали */
+  justify-content: center; /* по горизонтали */
+  width: 32px; /* или другой размер */
+  height: 32px; /* или другой размер */
+  font-size: 20px; /* размер шрифта */
+  border: none;
+  background-color: #4CAF50; /* пример цвета */
+  color: white;
+  cursor: pointer;
+}
+
+/* можно добавить дополнительные стили, например, при наведении */
+.addButton:hover {
+  background-color: #45a049;
+}
