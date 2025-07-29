@@ -15,6 +15,12 @@ const fetchServer = async (method, params = {}, data) => {
   }
 
   const response = await fetch(url, options);
+
+  // Проверка статуса ответа
+  if (!response.ok) {
+    throw new Error(`Ошибка ${response.status}: ${response.statusText}`);
+  }
+
   return await response.json();
 };
 
@@ -28,7 +34,10 @@ export const createTodo = (newTodo) => {
 };
 
 // Получение всех todos
-export const readTodo = () => fetchServer("GET");
+export const readTodos = () => fetchServer("GET");
+
+// Получение всех todo
+export const readTodo = (todoId) => fetchServer("GET", { id: todoId });
 
 // Обновление todo по id
 export const updateTodo = (todoId, todoData) =>

@@ -1,22 +1,19 @@
 // components/todo/todo-list-page.jsx
 import { useState, useEffect } from "react";
-import { readTodo, createTodo, updateTodo } from "../../api/api";
-import { ControlPanel } from "../control-panel/control-panel";
-import { Todo } from "../todo/todo";
+import { readTodos, createTodo, updateTodo } from "../../api/api";
+import { ControlPanel } from "../../components/control-panel/control-panel";
+import { Todo } from "../../components/todo/todo";
 
-export const TodoListPage = ({
-  userTodos,
-  setUserTodos,
-  refreshTodos,
-  onUpdate,
-}) => {
+export const TodoListPage = () => {
   const [isAlphabetSorting, setIsAlphabetSorting] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
+  const [userTodos, setUserTodos] = useState([]);
+  const [refreshTodos, setRefreshTodos] = useState(false);
 
   useEffect(() => {
     const fetchTodos = async () => {
       try {
-        const todos = await readTodo();
+        const todos = await readTodos();
         setUserTodos(todos);
       } catch (error) {
         console.error("Ошибка при загрузке задач:", error);
@@ -25,13 +22,17 @@ export const TodoListPage = ({
     fetchTodos();
   }, [refreshTodos, setUserTodos]);
 
+  const handleUpdateTodos = () => {
+    setRefreshTodos((prev) => !prev);
+  };
+
   // Добавление задачи
   const handleAddTodo = async () => {
     const title = prompt("Введите название задачи");
     if (!title) return;
     try {
       await createTodo({ title });
-      onUpdate(); // Обновляем список задач
+      handleUpdateTodos(); // Обновляем список задач
     } catch (error) {
       console.error("Ошибка при добавлении задачи:", error);
     }
