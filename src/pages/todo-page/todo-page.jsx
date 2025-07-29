@@ -18,8 +18,6 @@ export const TodoPage = () => {
         if (todo) {
           setTodoItem(todo);
           setTitle(todo.title);
-        } else {
-          navigate("/404");
         }
       } catch (error) {
         console.error("Ошибка при загрузке задач:", error);
